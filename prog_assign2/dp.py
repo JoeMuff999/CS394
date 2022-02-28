@@ -46,13 +46,13 @@ def value_prediction(env:EnvWithModel, pi:Policy, initV:np.array, theta:float) -
             
                 new_V += pi.action_prob(state, action) * sum_prob
                 Q[state][action] = sum_prob
-                if(state == 0 and action == 0):
-                    print(pi.action_prob(state,action))
-                    print(sum_prob)
+                # if(state == 0 and action == 0):
+                #     print(pi.action_prob(state,action))
+                #     print(sum_prob)
                 q_delta = max(q_delta, abs(init_q - Q[state][action]))
             V[state] = new_V
             v_delta = max(v_delta, abs(init_v - V[state]))
-        print(Q)
+        # print(Q)
 
     # env.step()
     # pass
