@@ -83,6 +83,8 @@ class ValueFunctionWithNN(ValueFunctionWithApproximation):
         # print(G-prediction)
         loss = loss_function(prediction, torch.tensor([G]))
         loss.backward()
+        print(loss)
+        # print(loss.grad)
         self.optimizer.step()
 
         return None
